@@ -10,3 +10,5 @@ FROM nyc_subway_stations;
 ~~~
 
 If I wanted to make sure this scales to very large amounts of data I would make sure I have correct indexes set up to make finding data easier. I could also cluster the table based on that index. I could also partition the table and use parallel execution on the queries. If the data doesn't change often I could store the calculation to make retrieving it faster. 
+
+In regards to this specific query, I could make a new table with the transformation to geography type already done, and when scaling that would speed up the query a lot because of the preprocessing done when data is inserted.
